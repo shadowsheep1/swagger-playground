@@ -2,6 +2,8 @@ package it.shadowsheep.swagger.playground.foo;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.extensions.Extension;
+import io.swagger.v3.oas.annotations.extensions.ExtensionProperty;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,6 +20,7 @@ import java.io.Serializable;
 @Produces({"application/json"})
 public class DefaultApi {
 
+    // https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Annotations#extensions-annotations
     @POST
     @Path("/foobar")
     @Operation(summary = "Get FooBar",
@@ -30,7 +33,10 @@ public class DefaultApi {
                             )
                     )})
     public Response getYourFooBar(
-            @Parameter(schema = @Schema(implementation = FooBar.class))
+            @Parameter(content = @Content(
+                    mediaType = MediaType.APPLICATION_JSON,
+                    schema = @Schema(implementation = FooBar.class)
+            ))
                     FooBar f
     ) {
         return Response.ok(FooBar.TEDDY_BEAR).build();
@@ -57,5 +63,7 @@ public class DefaultApi {
     public class FooBar2 {
         public Long userId;
         public int myInt;
+
+        public FooBar fooBar;
     }
 }
