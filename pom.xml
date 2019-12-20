@@ -29,24 +29,9 @@
             <version>2.0.9</version>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-            <version>1.5.23</version>
-        </dependency>
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-jaxrs</artifactId>
-            <version>1.5.23</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>2.29.1</version>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
         </dependency>
     </dependencies>
 
@@ -85,7 +70,7 @@
                         </info>
                     </swaggerConfig>
                     <resourcePackages>
-                        <resourcePackage>it.shadowsheep.swagger.playground.resource</resourcePackage>
+                        <!--resourcePackage>it.shadowsheep.swagger.playground.resource</resourcePackage-->
                         <resourcePackage>it.shadowsheep.swagger.playground.foo</resourcePackage>
                     </resourcePackages>
                     <outputDirectory>${basedir}/target/</outputDirectory>
