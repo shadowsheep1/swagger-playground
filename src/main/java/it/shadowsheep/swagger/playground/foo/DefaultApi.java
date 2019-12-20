@@ -66,4 +66,27 @@ public class DefaultApi {
 
         public FooBar fooBar;
     }
+
+    @Schema(extensions = @Extension(
+            properties = {
+                    @ExtensionProperty(
+                            name = "enum-varnames",
+                            value = "[\"FOO\",\"BAR\",\"PUB\", \"BEER\"]",
+                            parseValue = true)}))
+    public enum FooBar {
+        WINNIE_THE_POO(0),
+        TEDDY_BEAR(1),
+        MASHA(2),
+        BEAR(3);
+
+        private final int type;
+
+        private FooBar(final int type) {
+            this.type = type;
+        }
+
+        public int getType() {
+            return type;
+        }
+    }
 }
