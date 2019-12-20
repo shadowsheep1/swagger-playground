@@ -10,14 +10,24 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openapitools.swagger</groupId>
-            <artifactId>swagger-maven-plugin</artifactId>
-            <version>2.1.1</version>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
@@ -71,9 +81,8 @@
                         </info>
                     </swaggerConfig>
                     <resourcePackages>
-                        <!--resourcePackage>io.openapitools.swagger.example</resourcePackage>
-                        <resourcePackage>io.openapitools.swagger.example.alternate</resourcePackage-->
                         <resourcePackage>it.shadowsheep.swagger.playground.resource</resourcePackage>
+                        <resourcePackage>it.shadowsheep.swagger.playground.foo</resourcePackage>
                     </resourcePackages>
                     <outputDirectory>${basedir}/target/</outputDirectory>
                     <outputFilename>swagger</outputFilename>
@@ -94,8 +103,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
