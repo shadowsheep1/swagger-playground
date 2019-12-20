@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 
 @Path("/foobar")
 @Api(tags = {"foobar"})
-@Produces({"application/json", "application/xml"})
+@Produces({"application/json"})
 public class DefaultApi {
 
     @GET
